@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 18px;
+  z-index: 20;
+}
+
+.logo__section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo__section a {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #1a1b1c;
+  text-decoration: none;
+}
+
+.logo__section p {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.code__btn {
+  height: 36px;
+  padding: 8px 16px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #1a1b1c;
+  color: #fcfcfc;
+  border: none;
+  cursor: pointer;
+  transition: all ease 300ms;
+}
+
+.code__btn:hover {
+  background-color: #333;
+}
