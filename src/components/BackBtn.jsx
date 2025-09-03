@@ -1,5 +1,5 @@
 import React from 'react'
-import './BackBtn.css'
+import './Btn.css'
 import left_icon from "../assets/buttin-icon-shrunk.png";
 
 const BackBtn = () => {

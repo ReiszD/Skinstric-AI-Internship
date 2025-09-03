@@ -6,18 +6,22 @@ import BackBtn from "../components/BackBtn";
 import full_rectangle from "../assets/Full_Rectangle.png";
 import axios from "axios";
 import gsap from "gsap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const TestingForm = () => {
   const [step, setStep] = useState("name");
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const navigate = useNavigate();
-  const rectangleRef = useRef(null);
+  const outerRef = useRef(null);
+  const middleRef = useRef(null);
+  const innerRef = useRef(null);
 
-  const handleHover = () => {
-    gsap.to(rectangleRef.current, { rotate: 360, duration: 1, ease: "power2.out"})
-  }
+  window.addEventListener("load", () => {
+  gsap.to(outerRef.current, { rotation: 180, duration: 10, repeat: -1, ease: "slow"})
+  gsap.to(middleRef.current, { rotation: 180, duration: 10, repeat: -1, delay: 0.5, ease: "slow"})
+  gsap.to(innerRef.current, { rotation: 180, duration: 10, repeat: -1, delay: 0.8, ease: "slow"})
+  })
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,10 +49,10 @@ const TestingForm = () => {
     <div className="form">
       <IntroNavbar />
       <AnalysisTag />
-      <section className="home__title" onMouseEnter={handleHover}>
-        <img src={full_rectangle} alt="" className="form__img--outer" ref={rectangleRef} />
-        <img src={full_rectangle} alt="" className="form__img--middle" />
-        <img src={full_rectangle} alt="" className="form__img--inner" />
+      <section className="form__title">
+        <img src={full_rectangle} alt="" className="form__img--outer" ref={outerRef} />
+        <img src={full_rectangle} alt="" className="form__img--middle" ref={middleRef} />
+        <img src={full_rectangle} alt="" className="form__img--inner" ref={innerRef} />
         <h3>
           {step === "name" ? "Click to Type Name" : "Click to Type Location"}
         </h3>
@@ -70,7 +74,9 @@ const TestingForm = () => {
           />
         </form>
       </section>
+      <Link to="/">
       <BackBtn />
+      </Link>
     </div>
   );
 };
