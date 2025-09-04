@@ -1,0 +1,160 @@
+.analysis {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page__description {
+  position: relative;
+  width: 336px;
+  height: 48px;
+  top: 18px;
+  left: 15px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 24px;
+  color: #1a1b1c;
+  opacity: 0.8;
+}
+
+.page__description span {
+  display: block;
+}
+
+.analysis__title {
+  width: 400px;
+  height: 400px;
+}
+
+.loading h1 {
+    position: absolute;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    top: 50%;
+    left: 43%;
+}
+
+.diamond {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #f3f3f4;
+  z-index: 10;
+}
+
+.diamond:hover {
+    cursor: pointer;
+    background: #e1e1e2;
+}
+
+.diamond:nth-child(1) {
+  transform: translate(-50%, -130%) rotate(45deg);
+}
+.diamond:nth-child(2) {
+  transform: translate(-130%, -50%) rotate(45deg);
+}
+.diamond:nth-child(3) {
+  transform: translate(30%, -50%) rotate(45deg);
+}
+.diamond:nth-child(4) {
+  transform: translate(-50%, 30%) rotate(45deg);
+}
+
+.diamond h1,
+.diamond h2,
+.diamond h3,
+.diamond h4 {
+  transform: rotate(-45deg);
+  margin-top: 25%;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1a1b1c;
+}
+
+.diamond h1 {
+  padding-top: 25px;
+  padding-left: 5px;
+}
+
+.diamond h2 {
+  padding-top: 25px;
+}
+
+.diamond h3 {
+  padding-top: 15px;
+  padding-left: 32px;
+}
+
+.diamond h4 {
+  padding-top: 25px;
+  padding-left: 25px;
+}
+
+.diamond__outer,
+.diamond__middle,
+.diamond__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.diamond__outer {
+  width: 50%;
+  opacity: 0.5;
+  z-index: 1;
+}
+.diamond__middle {
+  width: 45%;
+  opacity: 0.8;
+  z-index: 2;
+}
+.diamond__inner {
+  width: 40%;
+  opacity: 1;
+  z-index: 3;
+}
+
+@media (max-width: 998px) {
+    .loading h1 {
+        left: 38%;
+    }
+  .diamond__outer {
+    width: 75%;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .diamond__middle {
+    width: 70%;
+    opacity: 0.8;
+    z-index: 2;
+  }
+  .diamond__inner {
+    width: 65%;
+    opacity: 1;
+    z-index: 3;
+  }
+}
+
+@media (max-width: 778px) {
+  .diamond__outer {
+    width: 95%;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .diamond__middle {
+    width: 90%;
+    opacity: 0.8;
+    z-index: 2;
+  }
+  .diamond__inner {
+    width: 85%;
+    opacity: 1;
+    z-index: 3;
+  }
+}

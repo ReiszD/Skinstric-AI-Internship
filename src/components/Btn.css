@@ -11,6 +11,10 @@
   z-index: 10;
 }
 
+.back__btn:hover {
+  cursor: pointer;
+}
+
 .back__btn img {
     width: 44px;
     height: 44px;
@@ -34,6 +38,10 @@
   gap: 16px;
   max-width: 200px;
   z-index: 10;
+}
+
+.proceed__btn:hover {
+  cursor: pointer;
 }
 
 .proceed__btn img {

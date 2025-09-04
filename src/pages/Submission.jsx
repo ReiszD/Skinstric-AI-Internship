@@ -10,39 +10,40 @@ import { Link } from "react-router-dom";
 
 const Submission = () => {
   const [loading, setLoading] = useState(true);
-  const outerRef = useRef(true);
-  const middleRef = useRef(true);
-  const innerRef = useRef(true);
-  const dotsRef = useRef(true);
+  const outerRef = useRef(null);
+  const middleRef = useRef(null);
+  const innerRef = useRef(null);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
-  useEffect = () => {
-    setLoading(true);
-  };
-
-  window.addEventListener("load", () => {
-    gsap.to(outerRef.current, {
-      rotation: 180,
-      duration: 10,
-      repeat: -1,
-      ease: "slow",
-    });
-
-    gsap.to(middleRef.current, {
-      rotation: 180,
-      duration: 10,
-      repeat: -1,
-      delay: 0.5,
-      ease: "slow",
-    });
-
-    gsap.to(innerRef.current, {
-      rotation: 180,
-      duration: 10,
-      repeat: -1,
-      delay: 0.8,
-      ease: "slow",
-    });
-  });
+  
+  useEffect(() => {
+    if (outerRef.current && middleRef.current && innerRef.current) {
+      gsap.to(outerRef.current, {
+        rotation: 360,
+        duration: 10,
+        repeat: -1,
+        ease: "linear",
+      });
+      gsap.to(middleRef.current, {
+        rotation: 360,
+        duration: 10,
+        repeat: -1,
+        delay: 0.5,
+        ease: "linear",
+      });
+      gsap.to(innerRef.current, {
+        rotation: 360,
+        duration: 10,
+        repeat: -1,
+        delay: 0.8,
+        ease: "linear",
+      });
+    }
+  }, []);
 
   return (
     <div className="form">

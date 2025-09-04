@@ -1,0 +1,26 @@
+.demographics {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.demographics__description {
+position: relative;
+  width: 336px;
+  height: 48px;
+  top: 18px;
+  left: 15px;
+  text-transform: uppercase;
+  color: #1a1b1c;
+    font-weight: 400;
+}
+
+.demographics__description h1 {
+    font-size: 72px;
+    line-height: 64px;
+}
+
+.demographics__description p {
+    font-size: 14px;
+    line-height: 24px;
+    opacity: 0.8;
+}
