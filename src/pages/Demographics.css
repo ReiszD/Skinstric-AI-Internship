@@ -1,26 +1,168 @@
 .demographics {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
 }
 
 .demographics__description {
-position: relative;
-  width: 336px;
-  height: 48px;
-  top: 18px;
-  left: 15px;
+  margin-bottom: 40px;
   text-transform: uppercase;
   color: #1a1b1c;
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .demographics__description h1 {
-    font-size: 72px;
-    line-height: 64px;
+  font-size: 72px;
 }
 
 .demographics__description p {
-    font-size: 14px;
-    line-height: 24px;
-    opacity: 0.8;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.demographics__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.left__column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tab__card {
+  background: #e1e1e2;
+  text-align: start;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-top: 2px solid #1a1b1c;
+  height: 100px;
+  width: 200px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+}
+
+.tab__card h2 {
+  font-size: 16px;
+  color: #1a1b1c;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-bottom: 16px;
+}
+
+.tab__card h2,
+.tab__card h3 {
+  font-size: 16px;
+  color: #1a1b1c;
+}
+
+.tab__card.active {
+  background: #1a1b1c;
+}
+
+.tab__card.active h2,
+.tab__card.active h3 {
+  color: #fcfcfc;
+}
+
+.middle__column {
+  background: #e1e1e2;
+  text-transform: uppercase;
+  border-top: 2px solid #1a1b1c;
+  height: 500px;
+  width: 960px;
+  box-sizing: border-box;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.middle__column h2 {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.graph {
+  width: 400px;
+  height: 400px;
+  align-self: flex-end;
+}
+
+.right__column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #e1e1e2;
+  border-top: 2px solid #1a1b1c;
+  width: 280px;
+}
+
+.right__column--title {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 8px;
+  gap: 80px;
+}
+
+.right__column--description {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.row.active {
+  background: #1a1b1c;
+  color: #fff;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.button__icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+@media (max-width: 998px) {
+  .tab__card {
+    width: 160px;
+  }
+  .middle__column {
+    width: 400px;
+  }
+  .graph {
+    width: 320px;
+    height: 320px;
+    align-self: flex-end;
+  }
+  .right__column {
+    width: 260px;
+  }
 }

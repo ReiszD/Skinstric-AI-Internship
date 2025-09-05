@@ -1,0 +1,57 @@
+.footer {
+  width: 100%;
+  gap: 20px;
+}
+
+.footer__text {
+    position: absolute;
+  gap: 16px;
+  font-size: 16px;
+  color: #1a1b1c;
+  font-weight: 400;
+  opacity: 0.5;
+  top: 103%;
+  left: 40%;
+  right: 15%;
+}
+
+.footer__buttons {
+  display: flex;
+  gap: 12px;
+  padding-top: 6%;
+  padding-left: 85%;
+}
+
+.confirm__btn,
+.reset__btn {
+  padding: 10px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.confirm__btn {
+  background-color: #1a1b1c;
+  color: #fcfcfc;
+  border: none;
+}
+
+.reset__btn {
+  background-color: #ffffff;
+  color: #1a1b1c;
+  border: 2px solid #1a1b1c;
+}
+
+@media (max-width: 998px) {
+    .footer__text {
+        position: absolute;
+        top: 93%;
+        left: 30%;
+    }
+    .footer__buttons {
+        padding-top: 18%;
+        padding-left: 75%;
+    }
+}
