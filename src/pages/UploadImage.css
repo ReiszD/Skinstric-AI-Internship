@@ -106,6 +106,15 @@
     bottom: 20%;
 }
 
+.option__circle {
+  position: relative;
+  z-index: 100;
+}
+
+.picture__icon {
+  cursor: pointer;
+}
+
 @media (max-width: 998px) {
     .upload__options {
         gap: 25%;

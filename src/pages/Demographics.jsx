@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Demographics.css";
 import AnalysisNavbar from "../components/AnalysisNavbar";
 import AITag from "../components/AITag";
@@ -9,65 +9,49 @@ import button_unselected from "../assets/radio-button.png";
 import button_selected from "../assets/radio-button-selected.png";
 
 const Demographics = () => {
-  const raceData = [
-    { label: "East Asian", value: 96 },
-    { label: "White", value: 6 },
-    { label: "Black", value: 3 },
-    { label: "South Asian", value: 2 },
-    { label: "Latin Hispanic", value: 0 },
-    { label: "South East Asian", value: 0 },
-    { label: "Middle Eastern", value: 0 },
-  ];
+  const [demographicsData, setDemographicsData] = useState({ race: [], age: [], gender: [], });
+  const [activeTab, setActiveTab] = useState("race");
+  const [selectedRace, setSelectedRace] = useState({ label: "-", value: 0 });
+  const [selectedAge, setSelectedAge] = useState({ label: "-", value: 0 });
+  const [selectedGender, setSelectedGender] = useState({ label: "-", value: 0 });
 
-  const ageData = [
-    { label: "0-9", value: 0 },
-    { label: "10-19", value: 4 },
-    { label: "20-29", value: 96 },
-    { label: "30-39", value: 2 },
-    { label: "40-49", value: 0 },
-    { label: "50-59", value: 0 },
-    { label: "60-69", value: 0 },
-    { label: "70+", value: 0 },
-  ];
+  useEffect(() => {
+    const storedData = JSON.parse(localStorage.getItem("demographicsData") || "{}");
 
-  const genderData = [
-    { label: "Male", value: 72 },
-    { label: "Female", value: 27 },
-  ];
-  const [activeTab, setActiveTab] = useState("race" || "age" || "sex");
-  const [selectedRace, setSelectedRace] = useState(raceData[0]);
-  const [selectedAge, setSelectedAge] = useState(ageData[0]);
-  const [selectedGender, setSelectedGender] = useState(genderData[0]);
+    if (storedData && Object.keys(storedData).length > 0) {
+      const formatData = (obj) =>
+        Object.entries(obj || {}).map(([label, value]) => ({ label,
+          value: Math.floor(value * 100) 
+        }));
 
-  const getDataforTab = () => {
-    if (activeTab == "race")
-      return {
-        data: raceData,
-        selected: selectedRace,
-        setSelected: setSelectedRace,
-      };
-    if (activeTab == "age")
-      return {
-        data: ageData,
-        selected: selectedAge,
-        setSelected: setSelectedAge,
-      };
-    if (activeTab == "sex")
-      return {
-        data: genderData,
-        selected: selectedGender,
-        setSelected: setSelectedGender,
-      };
+      const raceArray = formatData(storedData.race);
+      const ageArray = formatData(storedData.age);
+      const genderArray = formatData(storedData.gender);
+
+      setDemographicsData({ race: raceArray, age: ageArray, gender: genderArray });
+      setSelectedRace(raceArray[0] || { label: "-", value: 0 });
+      setSelectedAge(ageArray[0] || { label: "-", value: 0 });
+      setSelectedGender(genderArray[0] || { label: "-", value: 0 });
+    }
+  }, []);
+
+  const getDataForTab = () => {
+    if (activeTab === "race") return { data: demographicsData.race, selected: selectedRace, setSelected: setSelectedRace };
+    if (activeTab === "age") return { data: demographicsData.age, selected: selectedAge, setSelected: setSelectedAge };
+    if (activeTab === "sex") return { data: demographicsData.gender, selected: selectedGender, setSelected: setSelectedGender };
+    return { data: [], selected: { label: "-", value: 0 }, setSelected: () => {} };
   };
-  const { data, selected, setSelected } = getDataforTab();
+
+  const { data, selected, setSelected } = getDataForTab();
 
   return (
     <div className="demographics">
       <AnalysisNavbar />
       <AITag />
+
       <div className="demographics__description">
         <h1>Demographics</h1>
-        <p>Predicted Race & Age</p>
+        <p>Predicted Race, Age & Gender</p>
       </div>
 
       <section className="demographics__tabs">
@@ -101,18 +85,18 @@ const Demographics = () => {
         <div className="middle__column">
           <h2>{selected.label}</h2>
           <div className="graph">
-          <CircularProgressbar
-            value={selected.value}
-            text={`${selected.value}%`}
-            strokeWidth={2}
-            styles={buildStyles({
-              textSize: "14px",
-              pathColor: "#1a1b1c",
-              textColor: "#1a1b1c",
-              trailColor: "#c1c2c3",
-              strokeLinecap: "butt"
-            })}
-          />
+            <CircularProgressbar
+              value={selected.value}
+              text={`${selected.value}%`}
+              strokeWidth={2}
+              styles={buildStyles({
+                textSize: "14px",
+                pathColor: "#1a1b1c",
+                textColor: "#1a1b1c",
+                trailColor: "#c1c2c3",
+                strokeLinecap: "butt",
+              })}
+            />
           </div>
         </div>
 
@@ -125,18 +109,12 @@ const Demographics = () => {
             {data.map((item, index) => (
               <div
                 key={index}
-                className={`row ${
-                  selected.label === item.label ? "active" : ""
-                }`}
+                className={`row ${selected.label === item.label ? "active" : ""}`}
                 onClick={() => setSelected(item)}
               >
                 <div className="label">
                   <img
-                    src={
-                      selected.label === item.label
-                        ? button_selected
-                        : button_unselected
-                    }
+                    src={selected.label === item.label ? button_selected : button_unselected}
                     alt="radio button"
                     className="button__icon"
                   />
@@ -148,6 +126,7 @@ const Demographics = () => {
           </div>
         </div>
       </section>
+
       <DemographicsFooter />
     </div>
   );

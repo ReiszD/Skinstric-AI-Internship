@@ -48,7 +48,6 @@
 }
 
 .tab__card h2 {
-  font-size: 16px;
   color: #1a1b1c;
   white-space: nowrap;
   overflow: hidden;
@@ -131,6 +130,7 @@
   cursor: pointer;
   padding: 8px;
   border-radius: 4px;
+  text-transform: capitalize;
 }
 
 .row.active {
