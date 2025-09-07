@@ -5,10 +5,21 @@
 }
 
 .demographics__description {
+    display: flex;
+    flex-direction: column;
   margin-bottom: 40px;
   text-transform: uppercase;
   color: #1a1b1c;
   font-weight: 400;
+}
+
+.demographics__btns {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 38%;
+    gap: 8px;
+    transform: translateY(-180px);
+    cursor: pointer;
 }
 
 .demographics__description h1 {
@@ -151,6 +162,9 @@
 }
 
 @media (max-width: 998px) {
+    .demographics__btns {
+        padding-left: 65%;
+    }
   .tab__card {
     width: 160px;
   }

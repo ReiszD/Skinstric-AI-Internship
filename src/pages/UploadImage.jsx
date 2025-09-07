@@ -72,7 +72,7 @@ const UploadImage = () => {
           <img src={full_rectangle} alt="" className="border__inner--cam" ref={innerRef} />
           <div className="camera__card">
             <div className="option__circle">
-              <img src={camera_icon} alt="Camera Upload" className="camera__icon" />
+              <img src={camera_icon} alt="Camera Upload" className="camera__icon" onClick={() => navigate('/camera')} />
             </div>
           </div>
           <p>Allow A.I.</p>

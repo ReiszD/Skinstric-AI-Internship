@@ -7,6 +7,8 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import button_unselected from "../assets/radio-button.png";
 import button_selected from "../assets/radio-button-selected.png";
+import left_button from '../assets/buttin-icon-shrunk.png';
+import right_button from '../assets/buttin-icon-shrunk-right.png';
 
 const Demographics = () => {
   const [demographicsData, setDemographicsData] = useState({ race: [], age: [], gender: [], });
@@ -44,6 +46,19 @@ const Demographics = () => {
 
   const { data, selected, setSelected } = getDataForTab();
 
+  const tabs = ["race", "age", "sex"];
+  const goToNextTab = () => {
+    const currentIndex = tabs.indexOf(activeTab);
+    const nextIndex = (currentIndex +1) % tabs.length;
+    setActiveTab(tabs[nextIndex]);
+  }
+
+  const goToPrevTab = () => {
+    const currentIndex = tabs.indexOf(activeTab);
+    const prevIndex = (currentIndex -1 + tabs.length) % tabs.length;
+    setActiveTab(tabs[prevIndex]);
+  }
+
   return (
     <div className="demographics">
       <AnalysisNavbar />
@@ -52,7 +67,12 @@ const Demographics = () => {
       <div className="demographics__description">
         <h1>Demographics</h1>
         <p>Predicted Race, Age & Gender</p>
+
       </div>
+        <div className="demographics__btns">
+        <img src={left_button} alt="" onClick={goToPrevTab} />
+        <img src={right_button} alt="" onClick={goToNextTab} />
+        </div>
 
       <section className="demographics__tabs">
         <div className="left__column">
