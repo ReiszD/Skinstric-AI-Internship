@@ -1,4 +1,151 @@
 .camera {
-    width: 100%;
-    margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+}
+
+.camera video,
+.camera img.webcam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.camera .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar {
+    filter: invert();
+}
+
+.directions {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fcfcfc;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+}
+
+.directions__row {
+  display: flex;
+  gap: 32px;
+}
+
+.direction-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fcfcfc;
+  transition: color 0.3s ease;
+}
+
+.direction-item img {
+    filter: invert();
+}
+
+.direction-item.met {
+  color: #111010;
+  font-weight: 400;
+}
+
+.img__captured {
+    position: absolute;
+    top: 254px;
+    left: 417px;
+    text-transform: uppercase;
+    color: #fcfcfc;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.capture__btn {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #fcfcfc;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.capture__btn img {
+  width: 40px;
+  height: 40px;
+}
+
+.bottombar {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.camera__btns {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 4;
+  gap: 600px;
+}
+
+.retake__btn,
+.upload__btn {
+  padding: 4px 24px;
+  gap: 8px;
+  color: #fcfcfc;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.left__arrow--btn,
+.right__arrow--btn {
+    filter: invert();
+    width: 44px;
+    height: 44px;
+}
+
+.left__arrow--btn {
+    position: absolute;
+    bottom: 32px;
+    left: 15px;
+}
+
+.retake__btn:hover,
+.upload__btn:hover {
+  background: rgba(255,255,255,0.2);
 }
