@@ -3,7 +3,51 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: black;
+  background: #fcfcfc;
+}
+
+.camera__icon--loading {
+  position: absolute;
+  width: 152px;
+  height: 152px;
+  top: 308px;
+  left: 670px;
+}
+
+.loading__title {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 24px;
+  width: 227px;
+  height: 24px;
+  top: 486px;
+  left: 670px;
+}
+
+.directions__loading {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #1a1b1c;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+}
+
+.direction__item--loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1a1b1c;
 }
 
 .camera video,
@@ -30,7 +74,7 @@
 }
 
 .navbar {
-    filter: invert();
+  filter: invert();
 }
 
 .directions {
@@ -55,7 +99,7 @@
   gap: 32px;
 }
 
-.direction-item {
+.direction__item {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -63,24 +107,25 @@
   transition: color 0.3s ease;
 }
 
-.direction-item img {
-    filter: invert();
+.direction__item img {
+  filter: invert();
 }
 
-.direction-item.met {
+.direction__item.met {
   color: #111010;
   font-weight: 400;
 }
 
 .img__captured {
-    position: absolute;
-    top: 254px;
-    left: 417px;
-    text-transform: uppercase;
-    color: #fcfcfc;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
+  top: 156px;
+  left: 656px;
+  text-transform: uppercase;
+  color: #fcfcfc;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 658px;
+  margin-left: 708px;
 }
 
 .capture__btn {
@@ -121,7 +166,7 @@
 
 .retake__btn,
 .upload__btn {
-  padding: 4px 24px;
+  padding: 4px 340px;
   gap: 8px;
   color: #fcfcfc;
   font-size: 14px;
@@ -134,18 +179,39 @@
 
 .left__arrow--btn,
 .right__arrow--btn {
-    filter: invert();
-    width: 44px;
-    height: 44px;
+  filter: invert();
+  width: 44px;
+  height: 44px;
 }
 
 .left__arrow--btn {
-    position: absolute;
-    bottom: 32px;
-    left: 15px;
+  position: absolute;
+  bottom: 32px;
+  left: 15px;
 }
 
 .retake__btn:hover,
 .upload__btn:hover {
-  background: rgba(255,255,255,0.2);
+  color: #c9c9c9;
+}
+
+@media (max-width: 998px) {
+  .img__captured {
+    margin-bottom: 758px;
+    margin-left: 408px;
+  }
+  .retake__btn,
+  .upload__btn {
+    padding: 4px 24px;
+  }
+  .camera__icon--loading {
+    width: 152px;
+    height: 152px;
+    top: 405px;
+    left: 370px;
+  }
+  .loading__title {
+    top: 556px;
+    left: 364px;
+  }
 }

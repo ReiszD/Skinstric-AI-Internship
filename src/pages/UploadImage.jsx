@@ -14,6 +14,7 @@ import axios from "axios";
 
 const UploadImage = () => {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const fileInputRef = useRef(null);
   const outerRef = useRef(null);
   const middleRef = useRef(null);
@@ -52,6 +53,9 @@ const UploadImage = () => {
     e.target.value = "";
   };
 
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   useEffect(() => {
       gsap.to(outerRef.current, {rotation: 180, duration: 10, repeat: -1, ease: "slow"});
       gsap.to(middleRef.current, {rotation: 180, duration: 10, repeat: -1, delay: 0.5, ease: "slow"});
@@ -72,8 +76,20 @@ const UploadImage = () => {
           <img src={full_rectangle} alt="" className="border__inner--cam" ref={innerRef} />
           <div className="camera__card">
             <div className="option__circle">
-              <img src={camera_icon} alt="Camera Upload" className="camera__icon" onClick={() => navigate('/camera')} />
+              <img src={camera_icon} alt="Camera Upload" className="camera__icon" onClick={openModal} />
             </div>
+            {isModalOpen && (
+            <div className="camera__modal">
+              <div className="modal__text">
+              <h1>Allow A.I. To Access Your Camera</h1>
+              </div>
+
+              <div className="camera__modal--btns">
+              <button className="deny__btn" onClick={closeModal}>Deny</button>
+              <button className="allow__btn" onClick={() => navigate('/camera')}>Allow</button>
+              </div>
+            </div>
+                )}
           </div>
           <p>Allow A.I.</p>
           <p>to scan your face.</p>

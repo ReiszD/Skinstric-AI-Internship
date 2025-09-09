@@ -38,6 +38,7 @@ const TestingForm = () => {
           { headers: { "Content-Type": "application/json" } }
         );
         console.log("Data Submitted:", response.data);
+        localStorage.setItem("demographicsData", JSON.stringify(response.data.data))
         navigate("/submitted")
       } catch (err) {
         console.error("Error Submitting Data:", err.response?.data || err);
