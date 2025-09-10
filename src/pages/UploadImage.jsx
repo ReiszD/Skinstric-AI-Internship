@@ -101,7 +101,6 @@ const UploadImage = () => {
           <img src={full_rectangle} alt="" className="border__outer--pic" ref={outerPicRef} />
           <img src={full_rectangle} alt="" className="border__middle--pic" ref={middlePicRef} />
           <img src={full_rectangle} alt="" className="border__inner--pic" ref={innerPicRef} />
-
           <div className="picture__card">
             <div className="option__circle">
               <input

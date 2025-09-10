@@ -10,8 +10,9 @@
   position: absolute;
   width: 152px;
   height: 152px;
-  top: 308px;
-  left: 670px;
+  top: 40%;
+  left: 45%;
+  transition: all 300ms ease;
 }
 
 .loading__title {
@@ -22,8 +23,9 @@
   line-height: 24px;
   width: 227px;
   height: 24px;
-  top: 486px;
-  left: 670px;
+  top: 55%;
+  left: 45%;
+  transition: all 300ms ease;
 }
 
 .directions__loading {
@@ -117,15 +119,17 @@
 }
 
 .img__captured {
-  top: 156px;
-  left: 656px;
+  top: 356px;
+  left: 756px;
   text-transform: uppercase;
   color: #fcfcfc;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
-  margin-bottom: 658px;
-  margin-left: 708px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 758px;
+  transition: all 300ms ease;
 }
 
 .capture__btn {
@@ -155,18 +159,21 @@
 }
 
 .camera__btns {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  z-index: 4;
-  gap: 600px;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    gap: 80%;
+}
+.retake__btn {
+  color: #fcfcfc;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 48px;
+  transition: all 300ms ease;
 }
 
-.retake__btn,
 .upload__btn {
-  padding: 4px 340px;
   gap: 8px;
   color: #fcfcfc;
   font-size: 14px;
@@ -174,7 +181,8 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
+  transition: all 300ms ease;
 }
 
 .left__arrow--btn,
@@ -195,23 +203,59 @@
   color: #c9c9c9;
 }
 
-@media (max-width: 998px) {
-  .img__captured {
-    margin-bottom: 758px;
-    margin-left: 408px;
-  }
-  .retake__btn,
-  .upload__btn {
-    padding: 4px 24px;
-  }
+@media (max-width: 1500px) {
   .camera__icon--loading {
-    width: 152px;
-    height: 152px;
-    top: 405px;
-    left: 370px;
+    position: absolute;
+    left: 45%;
   }
   .loading__title {
-    top: 556px;
-    left: 364px;
+    position: absolute;
+    left: 45%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .camera__icon--loading {
+    position: absolute;
+    width: 152px;
+    height: 152px;
+    top: 40%;
+    left: 43%;
+  }
+  .loading__title {
+    position: absolute;
+    top: 55%;
+    left: 43%;
+  }
+}
+
+@media (max-width: 768px) {
+    .camera__btns {
+        gap: 60%;
+    }
+  .camera__icon--loading {
+    left: 41%;
+  }
+  .loading__title {
+    left: 40%;
+  }
+}
+
+@media (max-width: 550px) {
+  .camera__btns {
+    gap: 50%;
+  }
+  .camera__icon--loading {
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    top: 45%;
+    left: 43%;
+  }
+  .loading__title {
+    position: absolute;
+    font-size: 12px;
+    top: 55%;
+    left: 39%;
   }
 }

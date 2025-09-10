@@ -72,6 +72,8 @@ const TestingForm = () => {
             }
             className="name__input"
             autoFocus
+            pattern="[A-Za-z\s\-]+"
+            title="Only letters, spaces, and hyphens are allowed"
           />
         </form>
       </section>

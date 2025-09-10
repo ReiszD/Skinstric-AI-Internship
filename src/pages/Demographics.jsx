@@ -68,11 +68,11 @@ const Demographics = () => {
         <h1>Demographics</h1>
         <p>Predicted Race, Age & Gender</p>
 
-      </div>
         <div className="demographics__btns">
         <img src={left_button} alt="" onClick={goToPrevTab} />
         <img src={right_button} alt="" onClick={goToNextTab} />
         </div>
+      </div>
 
       <section className="demographics__tabs">
         <div className="left__column">

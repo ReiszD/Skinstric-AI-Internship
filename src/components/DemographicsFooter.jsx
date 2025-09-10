@@ -6,9 +6,12 @@ import { Link } from 'react-router-dom'
 const DemographicsFooter = () => {
   return (
     <div className='footer'>
+      <div className='footer__back--btn'>
         <Link to='/analysis'>
-      <BackBtn />
+          <BackBtn />
         </Link>
+      </div>
+        
         <div className='footer__description'>
         <h1 className='footer__text'>
           If A.I. estimate is wrong, select the correct one.

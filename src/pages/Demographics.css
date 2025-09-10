@@ -5,26 +5,34 @@
 }
 
 .demographics__description {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 40px;
   text-transform: uppercase;
   color: #1a1b1c;
   font-weight: 400;
+  width: 100%;
+  max-width: 600px;
 }
 
 .demographics__btns {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 38%;
-    gap: 8px;
-    transform: translateY(-180px);
-    cursor: pointer;
-    transition: all 300ms ease;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-left: 33%;
+  gap: 8px;
+  transform: translateY(-164px);
+  cursor: pointer;
+  transition: all 300ms ease;
 }
 
 .demographics__description h1 {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
   font-size: 72px;
+  transition: all 300ms ease;
 }
 
 .demographics__description p {
@@ -42,6 +50,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 12%;
 }
 
 .tab__card {
@@ -51,7 +60,6 @@
   cursor: pointer;
   border-top: 2px solid #1a1b1c;
   height: 100px;
-  width: 200px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -87,7 +95,8 @@
   text-transform: uppercase;
   border-top: 2px solid #1a1b1c;
   height: 500px;
-  width: 960px;
+  width: 60%;
+  max-width: 1500px;
   box-sizing: border-box;
   padding: 16px;
   display: flex;
@@ -117,7 +126,7 @@
   gap: 16px;
   background: #e1e1e2;
   border-top: 2px solid #1a1b1c;
-  width: 280px;
+  width: 25%;
   transition: all 300ms ease;
 }
 
@@ -166,22 +175,55 @@
   margin-right: 8px;
 }
 
-@media (max-width: 998px) {
-    .demographics__btns {
-        padding-left: 65%;
-    }
-  .tab__card {
-    width: 160px;
-  }
+@media (max-width: 1356px) {
   .middle__column {
-    width: 400px;
+    width: 55%;
+  }
+
+}
+@media (max-width: 1355px) {
+  .middle__column {
+    width: 55%;
+  }
+}
+
+@media (max-width: 823px) {
+  .middle__column {
+    width: 50%;
   }
   .graph {
-    width: 320px;
-    height: 320px;
-    align-self: flex-end;
+    width: 350px;
+    height: 350px;
   }
   .right__column {
-    width: 260px;
+    width: 28%;
+  }
+  .right__column--title {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 728px) {
+  .graph {
+    width: 280px;
+    height: 280px;
+  }
+  .right__column--title {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 596px) {
+  .demographics__description h1 {
+    font-size: 55px;
+  }
+  .left__column {
+    width: 100%;
+  }
+  .middle__column {
+    width: 100%;
+  }
+  .right__column {
+    width: 100%;
   }
 }
