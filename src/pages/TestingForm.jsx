@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Form.css";
 import IntroNavbar from "../components/IntroNavbar";
 import AnalysisTag from "../components/AnalysisTag";
@@ -17,11 +17,12 @@ const TestingForm = () => {
   const middleRef = useRef(null);
   const innerRef = useRef(null);
 
-  window.addEventListener("load", () => {
+  useEffect(() => {
+    if(outerRef.current && middleRef.current && innerRef.current) {
   gsap.to(outerRef.current, { rotation: 180, duration: 10, repeat: -1, ease: "slow"})
   gsap.to(middleRef.current, { rotation: 180, duration: 10, repeat: -1, delay: 0.5, ease: "slow"})
   gsap.to(innerRef.current, { rotation: 180, duration: 10, repeat: -1, delay: 0.8, ease: "slow"})
-  })
+  }})
 
   const handleSubmit = async (e) => {
     e.preventDefault();

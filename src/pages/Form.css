@@ -51,7 +51,6 @@
     text-decoration: underline;
     z-index: 10;
     position: relative;
-    width: 90%;
     text-align: center;
     outline: none;
     border: none;
@@ -74,17 +73,17 @@
 }
 
 .form__img--outer {
-    width: 60%;
+    width: 50%;
     opacity: .5;
     z-index: 1;
 }
 .form__img--middle {
-    width: 50%;
+    width: 40%;
     opacity: .8;
     z-index: 2;
 }
 .form__img--inner {
-    width: 40%;
+    width: 30%;
     opacity: 1;
     z-index: 3;
 }

@@ -27,6 +27,11 @@
   pointer-events: auto;
 }
 
+.option__card--picture.dimmed {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
 .camera__icon,
 .picture__icon {
   position: relative;
@@ -170,6 +175,17 @@
   cursor: pointer;
 }
 
+@media (max-width: 1200px) {
+  .border__outer--cam,
+  .border__outer--pic,
+  .border__middle--cam,
+  .border__middle--pic,
+  .border__inner--cam,
+  .border__inner--pic {
+    margin-bottom: 10%;
+  }
+}
+
 @media (max-width: 768px) {
   .border__outer--cam,
   .border__outer--pic,
@@ -205,6 +221,6 @@
     height: 116px;
   }
   .camera__modal {
-    margin-left: -64px;
+    margin-left: -74px;
   }
 }

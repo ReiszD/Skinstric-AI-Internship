@@ -22,6 +22,7 @@ const UploadImage = () => {
   const outerPicRef = useRef(null);
   const middlePicRef = useRef(null);
   const innerPicRef = useRef(null);
+  const picRef = useRef(null);
 
   const toBase64 = (file) =>
     new Promise((resolve, reject) => {
@@ -96,8 +97,8 @@ const UploadImage = () => {
           <img src={circle_icon} alt="" className="camera__circle" />
           <img src={vector_line} alt="" className="camera__line" />
         </div>
-
-        <div className="option__card--picture">
+          
+        <div className={`option__card--picture ${isModalOpen ? "dimmed" : ""}`} ref={picRef}>
           <img src={full_rectangle} alt="" className="border__outer--pic" ref={outerPicRef} />
           <img src={full_rectangle} alt="" className="border__middle--pic" ref={middlePicRef} />
           <img src={full_rectangle} alt="" className="border__inner--pic" ref={innerPicRef} />

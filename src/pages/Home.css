@@ -50,9 +50,6 @@
 .dotted__section {
   position: absolute;
   top: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transform: translateY(-50%);
   z-index: 20;
 }
@@ -83,7 +80,7 @@
   text-transform: uppercase;
   color: black;
   cursor: pointer;
-  transform: translateX(-200px);
+  transform: translateX(100px) translateY(-316px);
 }
 
 .button__icon--left,
@@ -93,31 +90,31 @@
 }
 
 @media (max-width: 998px) {
-    .home__title h1 {
-    font-size: 100px;
+  .home__title h1 {
+    font-size: 90px;
     padding-bottom: 100px;
   }
-   .dotted__section.left {
-  left: -24px;
+  .dotted__section.left {
+    left: -24px;
   }
   .dotted__section.right {
-  right: -34px;
+    right: -34px;
   }
 }
 
-@media (max-width: 798px) {
+@media (max-width: 768px) {
   .home__title h1 {
-    font-size: 80px;
+    font-size: 70px;
     line-height: 100px;
   }
   .caption__paragraph {
     font-size: 12px;
   }
   .dotted__section.left {
-  left: -28px;
+    left: -28px;
   }
   .dotted__section.right {
-  right: -28px;
+    right: -28px;
   }
 }
 @media (max-width: 558px) {
@@ -129,9 +126,9 @@
     font-size: 8px;
   }
   .dotted__section.left {
-  left: -68px;
+    left: -68px;
   }
   .dotted__section.right {
-  right: -68px;
+    right: -68px;
   }
 }

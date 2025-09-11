@@ -7,8 +7,10 @@ import right_icon from "../assets/buttin-icon-shrunk-right.png";
 import IntroNavbar from "../components/IntroNavbar";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
+import { ToastContainer, toast } from "react-toastify";
 
 const Home = () => {
+  const notify = () => toast("Not Programmed Yet")
   const titleRef = useRef(null);
   const leftButtonRef = useRef(null);
 
@@ -23,9 +25,10 @@ const Home = () => {
   }
 
   return (
+    
     <div className="home">
       <IntroNavbar />
-
+      <ToastContainer position="top-right" />
       <div className="dotted__section right" onMouseEnter={handleHover} onMouseLeave={handleHoverOut}>
         <img src={right_dotted} alt="Right Dots" className="dots" />
         <Link to="/form" className="icon__btn--link">
@@ -39,7 +42,7 @@ const Home = () => {
       <div className="dotted__section left" ref={leftButtonRef}>
         <img src={left_dotted} alt="Left Dots" className="dots" />
         <button className="icon__button--left">
-          <img src={left_icon} alt="Icon" className="button__icon--left" />
+          <img src={left_icon} alt="Icon" className="button__icon--left" onClick={notify} />
           Discover A.I.
         </button>
       </div>

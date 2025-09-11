@@ -7,10 +7,12 @@ import BackBtn from "../components/BackBtn";
 import SummaryBtn from "../components/SummaryBtn";
 import gsap from "gsap";
 import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 const Analysis = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const notify = () => toast("Not Programmed Yet")
   const outerRef = useRef(null);
   const middleRef = useRef(true);
   const innerRef = useRef(true);
@@ -103,6 +105,7 @@ const Analysis = () => {
         </>
       ) : (
         <>
+          <ToastContainer position="top-right" />
           <AnalysisNavbar />
           <DemographicsTag />
           <div className="page__description">
@@ -133,13 +136,13 @@ const Analysis = () => {
             <div className="diamond" onClick={() => navigate("/demographics")}>
               <h1>Demographcis</h1>
             </div>
-            <div className="diamond">
+            <div className="diamond" onClick={notify}>
               <h2>Skin Type Details</h2>
             </div>
-            <div className="diamond">
+            <div className="diamond" onClick={notify}>
               <h3>Cosmetic Concerns</h3>
             </div>
-            <div className="diamond">
+            <div className="diamond" onClick={notify}>
               <h4>Weather</h4>
             </div>
           </section>

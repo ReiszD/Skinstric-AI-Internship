@@ -47,8 +47,6 @@ const Submission = () => {
 
   return (
     <div className="form">
-      <IntroNavbar />
-      <AnalysisTag />
       <section className="form__title">
         <img
           src={full_rectangle}
@@ -70,7 +68,7 @@ const Submission = () => {
         />
         {loading ? (
           <>
-            <h4>Processing Your Submission</h4>
+            <h4>Preparing Your Submission</h4>
             <p>•••</p>
           </>
         ) : (
