@@ -38,7 +38,7 @@ const TestingForm = () => {
           { name: name.trim(), location: location.trim(), },
           { headers: { "Content-Type": "application/json" } }
         );
-        console.log("Data Submitted:", response.data);
+        alert("Data Submitted:", response.data);
         localStorage.setItem("demographicsData", JSON.stringify(response.data.data))
         navigate("/submitted")
       } catch (err) {

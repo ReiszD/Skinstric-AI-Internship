@@ -42,7 +42,7 @@ const UploadImage = () => {
         "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",
         { image: base64 },
         { headers: { "Content-Type": "application/json" } });
-      console.log("Upload success:", res.data);
+      alert("Upload success:", res.data);
       localStorage.setItem(
         "demographicsData",
         JSON.stringify(res.data.data)

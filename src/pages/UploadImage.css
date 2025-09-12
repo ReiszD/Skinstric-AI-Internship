@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #fcfcfc;
 }
 
 .upload__options {
@@ -112,6 +113,15 @@
   transition: all 300ms ease;
 }
 
+  .border__outer--cam,
+  .border__outer--pic,
+  .border__middle--cam,
+  .border__middle--pic,
+  .border__inner--cam,
+  .border__inner--pic {
+    margin-bottom: 8%;
+  }
+
 .option__circle {
   position: relative;
   z-index: 100;
@@ -173,17 +183,6 @@
 .allow__btn {
   text-transform: uppercase;
   cursor: pointer;
-}
-
-@media (max-width: 1200px) {
-  .border__outer--cam,
-  .border__outer--pic,
-  .border__middle--cam,
-  .border__middle--pic,
-  .border__inner--cam,
-  .border__inner--pic {
-    margin-bottom: 10%;
-  }
 }
 
 @media (max-width: 768px) {

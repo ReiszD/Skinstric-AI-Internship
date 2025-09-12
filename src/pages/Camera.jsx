@@ -56,7 +56,7 @@ const Camera = () => {
         { image: base64 },
         { headers: { "Content-Type": "application/json" } }
       )
-      console.log("Upload Success:", res.data)
+      alert("Upload Success:", res.data)
       localStorage.setItem("demographicsData", JSON.stringify(res.data.data))
       navigate("/demographics")
     } catch (err) {
