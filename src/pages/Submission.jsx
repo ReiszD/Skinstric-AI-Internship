@@ -19,6 +19,11 @@ const Submission = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+  if (!loading) {
+    alert("Data Submitted");
+  }
+}, [loading]);
   
   useEffect(() => {
     if (outerRef.current && middleRef.current && innerRef.current) {
@@ -44,7 +49,7 @@ const Submission = () => {
       });
     }
   }, []);
-
+  
   return (
     <div className="form">
       <section className="form__title">
@@ -53,19 +58,19 @@ const Submission = () => {
           alt=""
           className="form__img--outer"
           ref={outerRef}
-        />
+          />
         <img
           src={full_rectangle}
           alt=""
           className="form__img--middle"
           ref={middleRef}
-        />
+          />
         <img
           src={full_rectangle}
           alt=""
           className="form__img--inner"
           ref={innerRef}
-        />
+          />
         {loading ? (
           <>
             <h4>Preparing Your Submission</h4>

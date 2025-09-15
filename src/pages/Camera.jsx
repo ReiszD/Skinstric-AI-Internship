@@ -56,7 +56,7 @@ const Camera = () => {
         { image: base64 },
         { headers: { "Content-Type": "application/json" } }
       )
-      alert("Upload Success:", res.data)
+      alert("Upload Success", res.data)
       localStorage.setItem("demographicsData", JSON.stringify(res.data.data))
       navigate("/demographics")
     } catch (err) {
@@ -128,8 +128,8 @@ const Camera = () => {
                 <h1>Great Shot!</h1>
             </div>
           <div className='camera__btns'>
-            <button onClick={() => setImgSrc(null)} className='retake__btn'>Back</button>
-            <button onClick={handleUpload} className='upload__btn'>Proceed
+            <button onClick={() => setImgSrc(null)} className='retake__btn'>Retake</button>
+            <button onClick={handleUpload} className='upload__btn'>Upload
                 <img src={right_button} alt="" className='right__arrow--btn' />
             </button>
           </div>
