@@ -161,15 +161,27 @@
 .camera__btns {
   display: flex;
   align-content: center;
-  justify-content: space-around;
-  gap: 80%;
+  justify-content: flex-end;
+  margin-right: 16px;
+  transform: translateY(-50%);
 }
+
+.retake__controls {
+  position: absolute;
+  bottom: 32px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+}
+
 .retake__btn {
   color: #fcfcfc;
   font-size: 14px;
   text-transform: uppercase;
   cursor: pointer;
-  margin: 48px;
+  margin: 0;
   transition: all 300ms ease;
 }
 
@@ -193,9 +205,7 @@
 }
 
 .left__arrow--btn {
-  position: absolute;
-  bottom: 32px;
-  left: 15px;
+  position: static;
 }
 
 .retake__btn:hover,
@@ -211,6 +221,13 @@
   .loading__title {
     position: absolute;
     left: 45%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .camera__btns {
+    gap: 50%;
+    
   }
 }
 

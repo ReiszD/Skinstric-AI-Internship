@@ -121,14 +121,18 @@ const Camera = () => {
             </div>
           </div>
         </div>
+        <div className='retake__controls'>
         <img src={left_button} alt="" className='left__arrow--btn' onClick={() => navigate("/analysis")} />
+        {imgSrc && (
+        <button onClick={() => setImgSrc(null)} className='retake__btn'>Retake</button>
+          )}
+        </div>
         {imgSrc ? (
-            <>
+          <>
             <div className='img__captured'>
                 <h1>Great Shot!</h1>
             </div>
           <div className='camera__btns'>
-            <button onClick={() => setImgSrc(null)} className='retake__btn'>Retake</button>
             <button onClick={handleUpload} className='upload__btn'>Upload
                 <img src={right_button} alt="" className='right__arrow--btn' />
             </button>
